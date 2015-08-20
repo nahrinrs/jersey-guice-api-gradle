@@ -1,6 +1,9 @@
 Install Java 1.8
+
 Install gradle
+
 clone the project
+
 run.bat
 
 try this:
