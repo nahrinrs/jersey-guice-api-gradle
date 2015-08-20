@@ -16,7 +16,19 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
-
+.project
+.metadata/
+.classpath
+.settings/
+target/
+.gradle
+/local.properties
+.idea
+*.iml
+build
+output.log4j.log*
+logs.txt
+bin
 # =========================
 # Operating System Files
 # =========================
@@ -41,3 +53,4 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
