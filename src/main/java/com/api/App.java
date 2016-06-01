@@ -20,34 +20,30 @@ public class App extends AbstractModule {
 
 	public static void main(String[] args) {
 		logger.info("<<<<<<<<<<<<<<<<<<< APP STARTED >>>>>>>>>>>>>>>>>>>>");
-		Guice.createInjector(
-	            Stage.PRODUCTION,
-	            new App()
-	        );
-	        
-	        int port = 5000;
-	        Server server = new Server(port);
+		Guice.createInjector(Stage.PRODUCTION, new App());
 
-	        ServletContextHandler context = new ServletContextHandler(server, "/", ServletContextHandler.SESSIONS);
-	        context.addFilter(GuiceFilter.class, "/*", EnumSet.<javax.servlet.DispatcherType>of(javax.servlet.DispatcherType.REQUEST, javax.servlet.DispatcherType.ASYNC));
-	        context.addServlet(DefaultServlet.class, "/*");
-	        
-	        try {
-				server.start();
-				server.join();
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+		int port = 5000;
+		Server server = new Server(port);
 
-	        
+		ServletContextHandler context = new ServletContextHandler(server, "/", ServletContextHandler.SESSIONS);
+		context.addFilter(GuiceFilter.class, "/*", EnumSet.<javax.servlet
+				.DispatcherType> of(javax.servlet.DispatcherType.REQUEST, javax.servlet.DispatcherType.ASYNC));
+		context.addServlet(DefaultServlet.class, "/*");
+
+		try {
+			server.start();
+			server.join();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 	}
-	
+
 	@Override
 	protected void configure() {
 		install(new ServerModule());
-		
-	}
 
+	}
 
 }

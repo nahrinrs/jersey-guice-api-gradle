@@ -18,17 +18,16 @@ import com.sun.jersey.guice.spi.container.servlet.GuiceContainer;
 public class ServerModule extends JerseyServletModule {
 	@Override
 	protected void configureServlets() {
-		
+
 		bind(DefaultServlet.class).in(Singleton.class);
-        bind(TestResource.class).in(Singleton.class);
+		bind(TestResource.class).in(Singleton.class);
 
-        bind(MessageBodyReader.class).to(JacksonJsonProvider.class);
-        bind(MessageBodyWriter.class).to(JacksonJsonProvider.class);
+		bind(MessageBodyReader.class).to(JacksonJsonProvider.class);
+		bind(MessageBodyWriter.class).to(JacksonJsonProvider.class);
 
-        Map<String, String> options = new HashMap<String, String>();
-        options.put("com.sun.jersey.api.json.POJOMappingFeature", "true");
-        serve("/*").with(GuiceContainer.class, options);
+		Map<String, String> options = new HashMap<String, String>();
+		options.put("com.sun.jersey.api.json.POJOMappingFeature", "true");
+		serve("/*").with(GuiceContainer.class, options);
 	}
 
-	
 }
