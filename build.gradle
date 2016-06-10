@@ -18,7 +18,7 @@ allprojects {
 		guiceVersion = '3.0'
 		jerseyVersion = '1.18.1'
 		log4jVersion = '1.2.17'
-		jacksonVersion = '2.3.3'
+		jacksonVersion = '2.7.4'
 		jettyVersion = '9.2.2.v20140723'
 		jspVersion = '3.1.0'
 		jedisVersion = '2.4.2'
@@ -87,6 +87,9 @@ dependencies {
 	compile "org.mockito:mockito-all:$mockitoVersion"	
 	compile "org.apache.httpcomponents:httpclient:4.4"	
 	compile "org.apache.httpcomponents:httpmime:4.4"
+	compile "com.fasterxml.jackson.datatype:jackson-datatype-json-org:$jacksonVersion"
+	compile "com.fasterxml.jackson.datatype:jackson-datatype-joda:$jacksonVersion"
+	
 	
     testCompile group: 'junit', name: 'junit', version: '4.+'
 }
