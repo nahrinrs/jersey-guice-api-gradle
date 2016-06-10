@@ -1,0 +1,46 @@
+{
+    "app": {
+        "port": 8080,
+        "secret": "d3626e5eac041056958881d505e7a6ee",
+        "internalToken": "622781bf347ce8fe6afe294fc606b5bf"
+    },
+    "mongo": {
+        "url": "mongodb://127.0.0.1:27017/unravel",
+        "db": "unravel"
+    },
+    "redis": {
+        "host": "127.0.0.1",
+        "port": 6379
+    },
+    "memcached": {
+        "host": "127.0.0.1",
+        "port": 11211
+    },
+    "url": {
+        "cdn": "http://s3.amazonaws.com/api/"
+    },
+    "aws": {
+        "s3": {
+            "key": "xxx",
+            "secret": "xxx",
+            "bucket": "api"
+        },
+        "sns": {
+            "key": "xxx",
+            "secret": "xxx",
+            "arn": {
+                "ios": "arn:aws:sns:us-east-1:638525524911:app/APNS_SANDBOX/api-dev-ios-apns"
+            },
+            "admins": [
+                "nahrinrs@yahoo.com"
+            ]
+        },
+        "ses": {
+            "returnPath": "nahrinrs@yahoo.com",
+            "replyToAddresses": ["nahrinrs@yahoo.com"],
+            "source": "nahrinrs@yahoo.com",
+            "key": "xxx",
+            "secret": "xxx"
+        }
+    },
+}
