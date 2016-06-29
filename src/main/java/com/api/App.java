@@ -7,8 +7,11 @@ import org.eclipse.jetty.servlet.DefaultServlet;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 
 import com.api.server.ServerModule;
+import com.api.server.utils.Cmd;
+import com.api.server.utils.Env;
 import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
+import com.google.inject.Injector;
 import com.google.inject.Stage;
 import com.google.inject.servlet.GuiceFilter;
 
@@ -20,7 +23,9 @@ public class App extends AbstractModule {
 
 	public static void main(String[] args) {
 		logger.info("<<<<<<<<<<<<<<<<<<< APP STARTED >>>>>>>>>>>>>>>>>>>>");
-		Guice.createInjector(Stage.PRODUCTION, new App());
+		Cmd.init(args);
+		Env.init();
+		Injector injector = Guice.createInjector(new App());
 
 		int port = 5000;
 		Server server = new Server(port);
